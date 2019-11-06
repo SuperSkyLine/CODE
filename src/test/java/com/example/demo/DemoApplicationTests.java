@@ -17,13 +17,12 @@ import redis.clients.jedis.JedisPool;
 class DemoApplicationTests {
 	@Autowired
 	UserService userService;
-	@Autowired
-	JedisPool jedisPool;
+	
 	@Test
 	void contextLoads() {
-		RedisUtil.setV("user", userService.getUserInfo(), 0,jedisPool);
-		RedisUtil.delV("user",0, jedisPool);
-		System.out.println(JSON.toJSONString(RedisUtil.getVStr("user",0,jedisPool)));
+		RedisUtil.setV("user", userService.getUserInfo(), 0);
+		//RedisUtil.delV("user",0);
+		System.out.println(JSON.toJSONString(RedisUtil.getVStr("user",0)));
 	}
 
 }

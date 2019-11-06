@@ -458,3 +458,105 @@ Caused by: java.lang.ClassNotFoundException: Cannot find class: com.example.mode
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
 	... 16 more
+2019-11-06 11:43:54.327 -ERROR  [           main] o.s.b.SpringApplication        : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisUtil': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.example.demo.common.RedisUtil] from ClassLoader [sun.misc.Launcher$AppClassLoader@764c12b6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:287) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1286) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1201) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at com.example.demo.DemoApplication.main(DemoApplication.java:12) [classes/:?]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.example.demo.common.RedisUtil] from ClassLoader [sun.misc.Launcher$AppClassLoader@764c12b6]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:477) ~[spring-core-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:318) ~[spring-core-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	... 18 more
+Caused by: java.lang.NoClassDefFoundError: KeyPrefix
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[?:1.8.0_112]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701) ~[?:1.8.0_112]
+	at java.lang.Class.getDeclaredMethods(Class.java:1975) ~[?:1.8.0_112]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:459) ~[spring-core-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:318) ~[spring-core-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	... 18 more
+Caused by: java.lang.ClassNotFoundException: KeyPrefix
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[?:1.8.0_112]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[?:1.8.0_112]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) ~[?:1.8.0_112]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[?:1.8.0_112]
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[?:1.8.0_112]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701) ~[?:1.8.0_112]
+	at java.lang.Class.getDeclaredMethods(Class.java:1975) ~[?:1.8.0_112]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:459) ~[spring-core-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:318) ~[spring-core-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	... 18 more
+2019-11-06 11:44:27.646 -ERROR  [           main] o.s.b.SpringApplication        : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisConfig': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.redis.jedis.max-active' in value "${spring.redis.jedis.max-active}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:403) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1429) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at com.example.demo.DemoApplication.main(DemoApplication.java:12) [classes/:?]
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.redis.jedis.max-active' in value "${spring.redis.jedis.max-active}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178) ~[spring-core-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124) ~[spring-core-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236) ~[spring-core-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210) ~[spring-core-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175) ~[spring-context-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:908) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1228) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:636) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:397) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	... 17 more
+2019-11-06 15:10:09.190 -ERROR  [           main] c.e.d.c.RedisUtil              : setV初始化jedis异常：java.lang.NullPointerException
+2019-11-06 15:10:09.193 -ERROR  [           main] c.e.d.c.RedisUtil              : getVString初始化jedis异常：java.lang.NullPointerException
+2019-11-06 15:10:47.963 -ERROR  [           main] c.e.d.c.RedisUtil              : setV初始化jedis异常：java.lang.NullPointerException
+2019-11-06 15:10:47.965 -ERROR  [           main] c.e.d.c.RedisUtil              : getVString初始化jedis异常：java.lang.NullPointerException
+2019-11-06 15:21:09.614 -ERROR  [           main] c.e.d.c.RedisUtil              : setV初始化jedis异常：java.lang.NullPointerException
+2019-11-06 15:21:09.615 -ERROR  [           main] c.e.d.c.RedisUtil              : getVString初始化jedis异常：java.lang.NullPointerException
+2019-11-06 16:08:45.673 -ERROR  [           main] c.e.d.c.RedisUtil              : setV初始化jedis异常：java.lang.NullPointerException
+2019-11-06 16:08:45.676 -ERROR  [           main] c.e.d.c.RedisUtil              : delV刪除失败java.lang.NullPointerException
+2019-11-06 16:08:45.676 -ERROR  [           main] c.e.d.c.RedisUtil              : getVString初始化jedis异常：java.lang.NullPointerException
+2019-11-06 16:09:11.316 -ERROR  [           main] c.e.d.c.RedisUtil              : setV初始化jedis异常：java.lang.NullPointerException
+2019-11-06 16:09:11.317 -ERROR  [           main] c.e.d.c.RedisUtil              : getVString初始化jedis异常：java.lang.NullPointerException
+2019-11-06 16:09:50.314 -ERROR  [           main] c.e.d.c.RedisUtil              : setV初始化jedis异常：java.lang.NullPointerException
+2019-11-06 16:09:50.318 -ERROR  [           main] c.e.d.c.RedisUtil              : getVString初始化jedis异常：java.lang.NullPointerException
+2019-11-06 16:14:05.464 -ERROR  [           main] c.e.d.c.RedisUtil              : setV初始化jedis异常：java.lang.NullPointerException
+2019-11-06 16:14:05.464 -ERROR  [           main] c.e.d.c.RedisUtil              : getVString初始化jedis异常：java.lang.NullPointerException
+2019-11-06 16:16:18.522 -ERROR  [           main] c.e.d.c.RedisUtil              : setV初始化jedis异常：java.lang.NullPointerException
+2019-11-06 16:16:18.524 -ERROR  [           main] c.e.d.c.RedisUtil              : getVString初始化jedis异常：java.lang.NullPointerException
+2019-11-06 16:17:21.912 -ERROR  [           main] c.e.d.c.RedisUtil              : setV初始化jedis异常：redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+2019-11-06 16:17:23.917 -ERROR  [           main] c.e.d.c.RedisUtil              : getVString初始化jedis异常：redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+2019-11-06 16:18:39.910 -ERROR  [           main] c.e.d.c.RedisUtil              : setV初始化jedis异常：java.lang.NullPointerException
+2019-11-06 16:18:39.914 -ERROR  [           main] c.e.d.c.RedisUtil              : getVString初始化jedis异常：java.lang.NullPointerException
+2019-11-06 16:22:46.957 -ERROR  [           main] c.e.d.c.RedisUtil              : setV初始化jedis异常：java.lang.NullPointerException
+2019-11-06 16:22:46.957 -ERROR  [           main] c.e.d.c.RedisUtil              : getVString初始化jedis异常：java.lang.NullPointerException

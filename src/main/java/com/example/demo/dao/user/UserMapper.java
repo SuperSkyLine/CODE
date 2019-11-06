@@ -5,5 +5,5 @@ import java.util.List;
 import com.example.demo.model.user.User;
 
 public interface UserMapper {
-    User getUserInfo();
+    List<User> getUserInfo();
 }
